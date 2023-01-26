@@ -1,15 +1,26 @@
 const express = require("express")
 const cors = require("cors")
 
+
 const app = express()
 const port = 2020
 
 app.use(cors())
+app.use(express.json())
 app.get("/product", (request, reponsive) => {
     console.log("huselt irwe")
     reponsive.send(data).status(200)
-
 })
+app.post("/product", (req, res) => {
+    data.unshift(req.body)
+    res.send(data)
+})
+app.delete("/product/:index", (req, res) => {
+    console.log(req.params.index)
+    data.splice(req.params.index, 1)
+    res.send(data)
+})
+
 app.listen(port, () => {
     console.log(`start server ${port}`)
 })
