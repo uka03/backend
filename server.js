@@ -1,6 +1,6 @@
 const express = require("express")
 const cors = require("cors")
-
+const { v4: uuidv4 } = require('uuid');
 
 const app = express()
 const port = 2020
@@ -12,7 +12,11 @@ app.get("/product", (request, reponsive) => {
     reponsive.send(data).status(200)
 })
 app.post("/product", (req, res) => {
+    let id = uuidv4();
+    console.log(id)
+    req.body.id = id;
     data.unshift(req.body)
+    console.log(req.body)
     res.send(data)
 })
 app.delete("/product/:index", (req, res) => {
@@ -20,7 +24,12 @@ app.delete("/product/:index", (req, res) => {
     data.splice(req.params.index, 1)
     res.send(data)
 })
+app.put("/product/:id", (req, res) => {
 
+    let product = data.find((product) => (product.id == req.params.id))
+    data[data.indexOf(product)] = req.body
+    res.send(data)
+})
 app.listen(port, () => {
     console.log(`start server ${port}`)
 })
@@ -31,7 +40,7 @@ app.listen(port, () => {
 
 
 
-const data = [
+let data = [
     {
         description:
             "Customize a Samsung Bespoke 3- or 4-door French door refrigerator or 4-Door Flex refrigerator with panels available in multiple colors and finishes. Plus, shop for matching appliances.",
