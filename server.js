@@ -261,7 +261,7 @@ let data = [
         name: "Beats Solo3 Headphones",
         id: "4ab6599a",
         image:
-            "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.apple.com%2Fshop%2Fproduct%2FMX432LL%2FA%2Fbeats-solo3-wireless-headphones-the-beats-icon-collection-matte-black&psig=AOvVaw2tl_AIH02av1Ou9DkxSqTX&ust=1673669056089000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCJCPzZ7Vw_wCFQAAAAAdAAAAABAE",
+            "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6302/6302300_rd.jpg",
         price: 200,
         stock: 60,
         sale: 10,
@@ -314,14 +314,15 @@ let data = [
             "2022 Apple 12.9-inch iPad Pro (Wi-Fi, 128GB) - Space Gray (6th Generation)",
         spec: [
             {
-                Brand: "Apple",
-                Model_Name: "IPad",
-                Memory_Storage_Capacity: "128GB",
-                Color: "Space Gray",
-                Screen_Size: "12.9 inches",
-                Display_Resolution: "2732 x 2048 Pixels",
-                Network: "WiFi",
+                Brand: "Apple"
             },
+            { Model_Name: "IPad" },
+            { Memory_Storage_Capacity: "128GB" },
+            { Color: "Space Gray" },
+            { Screen_Size: "12.9 inches" },
+            { Display_Resolution: "2732 x 2048 Pixels" },
+            { Network: "WiFi" },
+
         ],
         name: "Apple IPad Pro 2022 12.9 inches",
         id: "0ed4e2d2",
