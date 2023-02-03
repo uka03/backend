@@ -61,10 +61,6 @@ app.post("/product", (req, res) => {
       });
     }
   });
-
-  // data.unshift(req.body)
-  // console.log(req.body)
-  // res.send(data)
 });
 app.delete("/product/:index", (req, res) => {
   fs.readFile("./data/products.json", (err, products) => {
@@ -99,6 +95,24 @@ app.put("/product/:id", (req, res) => {
         }
       });
       res.send(data);
+    }
+  });
+});
+app.put("/user/:id", (req, res) => {
+  fs.readFile("./data/users.json", (err, users) => {
+    if (err) {
+      res.status(500).send("not working");
+    } else {
+      let data = JSON.parse(users);
+      let user = data.find((user) => Number(req.params.id) == user.id);
+      data[data.indexOf(user)] = req.body;
+      fs.writeFile("./data/users.json", JSON.stringify(data), (err) => {
+        if (err) {
+          res.status(500).send({ message: "not working" });
+        } else {
+          res.status(200).send({ message: "working" });
+        }
+      });
     }
   });
 });

@@ -1,19 +1,62 @@
 [
   {
+    "description": "Customize a Samsung Bespoke 3- or 4-door French door refrigerator or 4-Door Flex refrigerator with panels available in multiple colors and finishes. Plus, shop for matching appliances.",
+    "spec": [{ "height": "69 7/8 inches" }, { "width": "35 3/4 inches" }],
+    "name": "4-Door Flex",
+    "id": "a4bbe2cc",
+    "image": "https://image-us.samsung.com/SamsungUS/home/home-appliances/refrigerators/090321/rs22t5561sr/RS22T5561SR_01_SIlver_samsung.jpg?$product-details-jpg$",
+    "price": 12222,
+    "stock": 12,
+    "sale": 23,
+    "category": "appliances"
+  },
+  {
+    "name": "HP Elitebook 840",
+    "spec": [
+      { "DisplaySize": "14\"" },
+      { "CPU": "i5-6300U 2,4 GHZ" },
+      { "HardDrive": "1Tb SSD" },
+      { "RAM": "16GB" }
+    ],
+    "id": "ea5e3b6c",
+    "image": "https://i.ebayimg.com/images/g/E8wAAOSwO9Bjmd1t/s-l1600.jpg",
+    "description": "Used: An item that has been used previously. The item may have some signs of cosmetic wear, but is fully operational and functions as intended. This item may be a floor model or store return that has been used. See the seller’s listing for full details and description of any imperfections. ",
+    "price": 180,
+    "stock": 29,
+    "sale": 0,
+    "category": "laptop"
+  },
+  {
+    "name": "HP Probook 430",
+    "spec": [
+      { "DisplaySize": "13\"" },
+      { "CPU": "i5-8250U 2,4 GHZ" },
+      { "HardDrive": "256Gb SSD" },
+      { "RAM": "8GB" }
+    ],
+    "id": "bf3e8ab6",
+    "image": "https://i.ebayimg.com/images/g/F2oAAOSwbxBimCXu/s-l1600.jpg",
+    "description": "Touch Convertible Laptop AMD. 1 year Warranty. Free and fast delivery.",
+    "price": 265,
+    "stock": 2,
+    "sale": 15,
+    "category": "laptop"
+  },
+  {
     "name": "Acer Spin 3",
-    "image": "https://i.ebayimg.com/images/g/YLkAAOSwKjpjpOdr/s-l1600.jpg",
-    "price": "220",
-    "stock": "12",
-    "sale": "101",
-    "category": "laptop",
-    "brand": "laptop",
     "spec": [
       { "DisplaySize": "14\"" },
       { "CPU": "i5-8250U 2,4 GHZ" },
       { "HardDrive": "512Gb SSD" },
       { "RAM": "8GB" }
     ],
-    "id": "0bd16f1e"
+    "id": "0bd16f1e",
+    "image": "https://i.ebayimg.com/images/g/YLkAAOSwKjpjpOdr/s-l1600.jpg",
+    "description": "Touch Convertible Laptop AMD. 1 year Warranty. Free and fast delivery.",
+    "price": 220,
+    "stock": 12,
+    "sale": 10,
+    "category": "laptop"
   },
   {
     "description": "The iPad is a touchscreen tablet PC made by Apple . The original iPad debuted in 2010. Apple has three iPad product lines: iPad, iPad mini and iPad Pro. All models are available in silver, gray and gold. They run Apple's iOS mobile operating system and have Wi-Fi connectivity with optional 4G capabilities.",
@@ -88,6 +131,21 @@
     "stock": 247,
     "sale": 10,
     "category": "laptop"
+  },
+  {
+    "description": "Philips Hue smart LED bulbs",
+    "spec": [
+      { "type": "A19" },
+      { "wattage": "9.5W" },
+      { "output": "800 Lumens" }
+    ],
+    "name": "LED bulbs",
+    "id": "8bf7f5fc",
+    "image": "​​https://cdn.vox-cdn.com/thumbor/twhweqrG_obtz7SoYGWKld_qgMM=/0x0:5250x3600/1400x1400/filters:focal(2625x1800:2626x1801)/cdn.vox-cdn.com/uploads/chorus_asset/file/22823524/philips_smart_led_bulb_package.jpg",
+    "price": 80,
+    "stock": 4,
+    "sale": 2,
+    "category": "appliances"
   },
   {
     "description": "Philips HD6975/00 25 Litre Digital Oven Toaster Grill",
