@@ -20,6 +20,7 @@ app.get("/product", (request, res) => {
     }
   });
 });
+
 app.get("/users", (request, res) => {
   fs.readFile("./data/users.json", (err, users) => {
     if (err) {
@@ -31,6 +32,7 @@ app.get("/users", (request, res) => {
     }
   });
 });
+
 app.get("/order", (request, res) => {
   fs.readFile("./data/order.json", (err, order) => {
     if (err) {
@@ -42,6 +44,7 @@ app.get("/order", (request, res) => {
     }
   });
 });
+
 app.post("/product", (req, res) => {
   let id = uuidv4();
   console.log(id);
@@ -62,6 +65,7 @@ app.post("/product", (req, res) => {
     }
   });
 });
+
 app.post("/users", (req, res) => {
   let id = uuidv4().slice(0, 4);
   console.log(id);
@@ -84,6 +88,7 @@ app.post("/users", (req, res) => {
   })
 
 })
+
 app.delete("/product/:index", (req, res) => {
   fs.readFile("./data/products.json", (err, products) => {
     if (err) {
@@ -101,6 +106,28 @@ app.delete("/product/:index", (req, res) => {
     }
   });
 });
+
+app.delete("/users/:id", (req, res) => {
+  fs.readFile("./data/users.json", (err, users) => {
+    if (err) {
+      res.send({ message: "not working" })
+    } else {
+      let data = JSON.parse(users)
+      let id = req.params.id
+      let user = data.find((user) => (user.id == id))
+      let index = data.indexOf(user)
+      data.splice(index, 1)
+      fs.writeFile("./data/users.json", JSON.stringify(data), (err) => {
+        if (err) {
+          res.status(500).send({ message: "not working" });
+        } else {
+          res.status(200).send({ message: "working " });
+        }
+      })
+    }
+  })
+})
+
 app.put("/product/:id", (req, res) => {
   fs.readFile("./data/products.json", (err, products) => {
     if (err) {
@@ -120,6 +147,7 @@ app.put("/product/:id", (req, res) => {
     }
   });
 });
+
 app.put("/user/:id", (req, res) => {
   fs.readFile("./data/users.json", (err, users) => {
     if (err) {
@@ -138,6 +166,7 @@ app.put("/user/:id", (req, res) => {
     }
   });
 });
+
 app.listen(port, () => {
   console.log(`start server ${port}`);
 });
