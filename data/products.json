@@ -1,21 +1,5 @@
 [
   {
-    "name": "HP Elitebook 840",
-    "spec": [
-      { "DisplaySize": "14\"" },
-      { "CPU": "i5-6300U 2,4 GHZ" },
-      { "HardDrive": "1Tb SSD" },
-      { "RAM": "16GB" }
-    ],
-    "id": "ea5e3b6c",
-    "image": "https://i.ebayimg.com/images/g/E8wAAOSwO9Bjmd1t/s-l1600.jpg",
-    "description": "Used: An item that has been used previously. The item may have some signs of cosmetic wear, but is fully operational and functions as intended. This item may be a floor model or store return that has been used. See the seller’s listing for full details and description of any imperfections. ",
-    "price": 180,
-    "stock": 29,
-    "sale": 0,
-    "category": "laptop"
-  },
-  {
     "name": "HP Probook 430",
     "spec": [
       { "DisplaySize": "13\"" },
