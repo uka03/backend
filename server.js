@@ -65,6 +65,26 @@ app.post("/product", (req, res) => {
     }
   });
 });
+app.post("/order", (req, res) => {
+  let id = uuidv4().slice(0, 4);
+  console.log(id);
+  req.body.orderId = id;
+  fs.readFile("./data/order.json", (err, data) => {
+    if (err) {
+      res.status(500).send({ message: err });
+    } else {
+      let order = JSON.parse(data);
+      order.unshift(req.body);
+      fs.writeFile("./data/order.json", JSON.stringify(order), (err) => {
+        if (err) {
+          res.status(500).send({ message: "not working" });
+        } else {
+          res.status(200).send({ message: "working " });
+        }
+      });
+    }
+  });
+});
 
 app.post("/users", (req, res) => {
   let id = uuidv4().slice(0, 4);
@@ -74,7 +94,7 @@ app.post("/users", (req, res) => {
     if (err) {
       res.status(500).send({ message: err });
     } else {
-      let user = JSON.parse(users)
+      let user = JSON.parse(users);
       user.unshift(req.body);
       fs.writeFile("./data/users.json", JSON.stringify(user), (err) => {
         if (err) {
@@ -82,12 +102,10 @@ app.post("/users", (req, res) => {
         } else {
           res.status(200).send({ message: "working " });
         }
-      })
-
+      });
     }
-  })
-
-})
+  });
+});
 
 app.delete("/product/:index", (req, res) => {
   fs.readFile("./data/products.json", (err, products) => {
@@ -110,23 +128,23 @@ app.delete("/product/:index", (req, res) => {
 app.delete("/users/:id", (req, res) => {
   fs.readFile("./data/users.json", (err, users) => {
     if (err) {
-      res.send({ message: "not working" })
+      res.send({ message: "not working" });
     } else {
-      let data = JSON.parse(users)
-      let id = req.params.id
-      let user = data.find((user) => (user.id == id))
-      let index = data.indexOf(user)
-      data.splice(index, 1)
+      let data = JSON.parse(users);
+      let id = req.params.id;
+      let user = data.find((user) => user.id == id);
+      let index = data.indexOf(user);
+      data.splice(index, 1);
       fs.writeFile("./data/users.json", JSON.stringify(data), (err) => {
         if (err) {
           res.status(500).send({ message: "not working" });
         } else {
           res.status(200).send({ message: "working " });
         }
-      })
+      });
     }
-  })
-})
+  });
+});
 
 app.put("/product/:id", (req, res) => {
   fs.readFile("./data/products.json", (err, products) => {
