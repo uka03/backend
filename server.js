@@ -185,6 +185,29 @@ app.put("/user/:id", (req, res) => {
   });
 });
 
+app.put("/products/:id", (req, res) => {
+  fs.readFile("./data/products.json", (err, products) => {
+    if (err) {
+      res.status(500).send("not working");
+    } else {
+      let data = JSON.parse(products)
+      let product = data.find((pro) => pro.id == req.params.id)
+      data[data.indexOf(product)].stock = data[data.indexOf(product)].stock - req.body.stock
+
+      fs.writeFile("./data/products.json", JSON.stringify(data), (err) => {
+        if (err) {
+
+          res.status(500).send({ message: "not working" });
+        } else {
+          res.status(200).send({ message: "working" });
+        }
+
+      })
+
+    }
+  })
+})
+
 app.listen(port, () => {
   console.log(`start server ${port}`);
 });
